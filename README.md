@@ -6,3 +6,7 @@ The library I work for started using Evanced's D!BS, but we were troubled that t
 I largely used the code from Liz Quilty at http://lizquilty.com/2015/02/24/shell-script-to-email-when-web-page-has-updateschanged/
 
 Chose to use ssmtp with Gmail to send the email. Followed http://www.howtogeek.com/51819/how-to-setup-email-alerts-on-linux-using-gmail/ to set it up.
+
+Before initial run you'll need to make the check_dibs.tmp.1 file.
+
+<code>$ touch check_dibs.tmp.1</code>
