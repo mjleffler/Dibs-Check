@@ -19,8 +19,8 @@ wget -q -O $INPUT "$URL"
 # Replace commas with new lines | remove brackets, braces, and double quotes | add new line to end
 tr ',' '\n' < $INPUT | tr -d '"[]{}' | sed -i -e '$a\' $TEMP
 
-#Check for diffrences between new and old pages
-MODIFIED=$(diff ${TEMP} ${TEMP}.1)
+#Check for diffrences between new and old pages and remove <
+MODIFIED=$(diff ${TEMP} ${TEMP}.1 | tr -d '<')
 
 # Check if the modified variable exists and is more than 0 characters
 if [[ ! -z "$MODIFIED" && ${#MODIFIED} -gt 0 ]]; then
